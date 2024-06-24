@@ -1,0 +1,101 @@
+1.Constant Folding
+Constant folding is a technique used by compilers to evaluate constant expressions at compile-time rather than at runtime.
+For example, consider the following code:
+int x = 5 + 3;
+In this case, the compiler can evaluate the expression 5 + 3 at compile-time and replace
+it with the result, which is 8. So, the generated code would be equivalent to:
+int x = 8;
+This technique is called constant folding.
+
+
+2.Constant Propagation
+Constant propagation is a technique used by compilers to replace variables with constants if the variable is assigned a constant
+value and is not reassigned.
+For example, consider the following code:
+int x = 5;
+int y = x + 3;
+In this case, the compiler can replace x with 5 in the second statement, resulting in:
+int y = 5 + 3;
+The compiler can then apply constant folding to evaluate the expression 5 + 3, resulting in:
+int y = 8;
+This technique is called constant propagation.
+
+
+3.Copy Propagation
+Copy propagation is a technique used by compilers to replace a variable with a copy of another variable if the
+variable is assigned the value of another variable and is not reassigned.
+For example, consider the following code:
+int x = 5;
+int y = x;
+int z = y + 3;
+In this case, the compiler can replace y with x in the third statement, resulting in:
+int z = x + 3;
+This technique is called copy propagation.
+
+
+4 Dead Code Elimination
+Dead code elimination is a technique used by compilers to remove code that is unreachable or has no effect on
+the program's output.
+For example, consider the following code:
+int x = 5;
+if (false) {
+    x = 10;
+    }
+In this case, the code inside the if statement is unreachable because the condition is always false. The
+compiler can eliminate this code, resulting in:
+int x = 5;
+This technique is called dead code elimination.
+
+
+5.Peephole Optimization
+Peephole optimization is a technique used by compilers to analyze and optimize a small section of code,
+usually a few instructions, to improve performance.
+For example, consider the following code:
+int x = 5;
+x = x + 1;
+x = x + 1;
+In this case, the compiler can optimize the code by combining the two increments into a single increment,
+resulting in:
+int x = 5;
+x = x + 2;  
+This technique is called peephole optimization.
+
+
+6.Register Allocation
+Register allocation is a technique used by compilers to assign variables to registers, which are small amounts of
+fast memory built into the CPU.
+For example, consider the following code:
+int x = 5;
+int y = x + 3;
+In this case, the compiler can allocate the variable x to a register, say R1, and
+the variable y to another register, say R2, resulting in:
+R1 = 5;
+R2 = R1 + 3;
+This technique is called register allocation.
+
+
+7.Instruction Selection
+Instruction selection is a technique used by compilers to select the most efficient machine instructions to
+implement a particular operation.
+For example, consider the following code:
+int x = 5;
+int y = x * 2;
+In this case, the compiler can select the most efficient machine instruction to implement the multiplication,
+such as a shift instruction, resulting in:
+R1 = 5;
+R2 = R1 << 1;
+This technique is called instruction selection.
+
+
+8.Strength Reduction
+Strength reduction is a technique used by compilers to replace expensive operations with cheaper ones.
+For example, consider the following code:
+int x = 5;
+int y = x * 2;
+In this case, the compiler can replace the multiplication with a shift operation, which is cheaper,
+resulting in:
+R1 = 5;
+R2 = R1 << 1;
+This technique is called strength reduction.
+
+
