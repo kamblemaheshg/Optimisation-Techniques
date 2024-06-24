@@ -98,4 +98,109 @@ R1 = 5;
 R2 = R1 << 1;
 This technique is called strength reduction.
 
+9.Simplifying Arithematic expressions
+Simplifying arithmetic expressions is a technique used by compilers to simplify complex arithmetic
+expressions into simpler ones.
+For example, consider the following code:
+int x = 5;
+int y = x + 0;
+In this case, the compiler can simplify the expression x + 0 to x, resulting in:
+R1 = 5;
+R2 = R1;
+This technique is called simplifying arithmetic expressions.
 
+
+10. Loop Optimization
+Loop optimization is a technique used by compilers to optimize loops to reduce the number of iterations
+or to reduce the number of operations performed inside the loop.
+For example, consider the following code:
+for (int i = 0; i < 10; i++) {
+    x = x + 1;
+    }
+In this case, the compiler can optimize the loop by reducing the number of iterations or by reducing the
+number of operations performed inside the loop, resulting in:
+R1 = 10;
+R2 = R1 + 10;
+This technique is called loop optimization.
+
+
+11. Loop Unrolling
+Loop unrolling is a technique used by compilers to increase the performance of loops by reducing the
+number of iterations.
+For example, consider the following code:
+for (int i = 0; i < 10; i++) {
+    x = x + 1;
+    }
+In this case, the compiler can unroll the loop by increasing the number of operations performed inside
+the loop, resulting in:
+R1 = 0;
+R2 = R1 + 1;
+R3 = R2 + 1;
+R4 = R3 + 1;
+R5 = R4 + 1;
+R6 = R5 + 1;
+R7 = R6 + 1;
+R8 = R7 + 1;
+R9 = R8 + 1;
+R10 = R9 + 1;
+This technique is called loop unrolling.
+
+12.Loop Fusion
+Loop fusion is a technique used by compilers to combine two or more loops into a single loop to
+reduce the number of iterations.
+For example, consider the following code:
+
+for (int i = 0; i < 10; i++) {
+    x = x + 1;
+    }
+
+for (int i = 0; i < 10; i++) {
+    y = y + 1;
+    }
+
+In this case, the compiler can fuse the two loops into a single loop, resulting in:
+
+for (int i = 0; i < 10; i++) {
+    x = x + 1;
+    y = y + 1;
+    }
+
+This technique is called loop fusion.
+
+13.Loop Interchange
+Loop interchange is a technique used by compilers to interchange the order of two nested loops to
+improve performance.
+For example, consider the following code:
+for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+        x = x + 1;
+        }
+    }
+
+In this case, the compiler can interchange the order of the two loops, resulting in:
+for (int j = 0; j < 10; j++) {
+    for (int i = 0; i < 10; i++) {
+        x = x + 1;
+        }
+    }
+
+This technique is called loop interchange.
+
+14.Loop Invariant Code Motion
+Loop invariant code motion is a technique used by compilers to move code that does not depend on
+the loop variables out of the loop.
+
+For example, consider the following code:
+
+for (int i = 0; i < 10; i++) {
+    x = x + y;
+    }
+    In this case, the compiler can move the code `x = x + y` out of the
+    loop, resulting in:
+
+x = x + y;
+
+for (int i = 0; i < 10; i++) {
+    // empty loop
+    }
+This technique is called loop invariant code motion.
