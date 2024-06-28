@@ -204,3 +204,21 @@ for (int i = 0; i < 10; i++) {
     // empty loop
     }
 This technique is called loop invariant code motion.
+
+15. Loop Blocking   (tilin)
+Loop blocking is a technique used by compilers to divide a large loop into smaller blocks, called
+tiles, to improve performance.
+For example, consider the following code:
+for (int i = 0; i < 1000; i++) {
+    x = x + 1;
+    }
+
+In this case, the compiler can divide the loop into smaller blocks of size 10, resulting
+in:
+for (int i = 0; i < 100; i++) {
+    for (int j = 0; j < 10; j++) {
+        x = x + 1;
+        }
+}
+This technique is called loop blocking.
+
